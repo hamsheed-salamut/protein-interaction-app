@@ -4,7 +4,7 @@
 		  		<a href="#" class="img logo rounded-circle mb-5" style="background-image: url(https://scontent.fmru3-1.fna.fbcdn.net/v/t31.0-1/p160x160/22256430_1737531686289293_2895101787620640035_o.jpg?_nc_cat=106&_nc_ohc=5e5Ti8iENjMAX8PpT2p&_nc_ht=scontent.fmru3-1.fna&_nc_tp=1002&oh=06d59de1a864d43152e6d1c50918baf2&oe=5ED1DBE7);"></a>
 	        <ul class="list-unstyled components mb-5">
 	          <li class="active">
-	            <a href="dashboard.php">Home</a>
+	            <a href="index.php">Home</a>
 	          </li>
 	          <li>
 	              <a href="#">Search</a>
@@ -69,7 +69,7 @@
             	<?php	}	?>
               <ul class="nav navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="dashboard.php">Home</a>
+                    <a class="nav-link" href="index.php">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Search</a>
