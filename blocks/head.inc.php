@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 
 	<title> Protein Interaction Web Application | v1.0.0 </title>
+	<link rel="shortcut icon" type="image/x-icon" href="/static/icons/Entire-Network.ico" />
 	<meta name="description" content="">
 	<link rel="stylesheet" href="/static/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/static/css/animations.css">
