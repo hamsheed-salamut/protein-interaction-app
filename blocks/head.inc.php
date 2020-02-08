@@ -3,7 +3,7 @@
   <head>
 	<meta charset="utf-8">
 
-	<title>PPI</title>
+	<title> Protein Interaction Web Application | v1.0.0 </title>
 	<meta name="description" content="">
 	<link rel="stylesheet" href="/static/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/static/css/animations.css">
