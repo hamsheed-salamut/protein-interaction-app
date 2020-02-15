@@ -9,7 +9,7 @@
     <script src="/static/js/popper.js"></script>
     <script src="/static/js/bootstrap.min.js"></script>
     <script src="/static/js/main.js"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 	<script src="/static/js/jsmol/JSmol.min.nojq.js"></script>
   <!--	<script src="<?php echo $baseurl; ?>static/js/jquery-1.11.3.min.js"></script>
    <!--   <script src="<?php echo $baseurl; ?>static/js/vendor/jquery.flexslider-min.js"></script>
