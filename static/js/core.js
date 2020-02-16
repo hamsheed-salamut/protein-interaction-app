@@ -14,9 +14,7 @@ function search(type, id) {
                 'action': type
             },
             success: function (data) {
-                console.log(data);
                 let options = getOptions();
-                console.log(data);
                 cytoscapeHelper(options, data);
             },
             error: function (data) {
@@ -29,7 +27,7 @@ function search(type, id) {
 
 function cytoscapeHelper(options, data) {
     data = data.gene;
-    //console.log(data.main);
+
     if (data === undefined || data.main == undefined || data.main.length === 0) {
         ppi_exist = false;
 
@@ -50,14 +48,14 @@ function cytoscapeHelper(options, data) {
         
         for (var x = 0; x < data['interactors'].length; x++) {
             let temp = data['interactors'][x];
-          //  console.log(temp);
+;
             var_nodes.push({data: {id   : temp.ID1,
                                    name : temp.symbol,
                                    bcolor: '#f8b739'}});
         }
-        //console.log(var_nodes);
+
         var unique_nodes = unique_fast(var_nodes), ids = [];
-       // console.log(unique_nodes);
+
         for (var x = 0; x < unique_nodes.length; x++) {
             ids[ids.length] = unique_nodes[x]['data']['id'];	;
         }
@@ -74,7 +72,7 @@ function cytoscapeHelper(options, data) {
             },
             success: function (result) {
                 let var_edges = [];
-               // console.log(result);
+                
                 for (var x = 0; x < result['interactions'].length; x++) {
                     var source, target;
 
@@ -93,7 +91,6 @@ function cytoscapeHelper(options, data) {
                     }});
                 }
                     main_gene_id = data.main.Id;
-                    //console.log(var_edges);
                     cytoscapeGraph(options, var_nodes, var_edges);
 
                 },
@@ -157,8 +154,6 @@ function cytoscapeGraph(options, var_nodes, var_edges, settings) {
         style: stylesheet,
         elements: {
             nodes: var_nodes
-            // ,edges: var_edges
-            // ,edges: []
         },
         layout:options,			
         motionBlur: false,
@@ -204,7 +199,7 @@ function cytoscapeGraph(options, var_nodes, var_edges, settings) {
             
             var numEdges = var_edges.length,
                 counter = 0;
-            //console.log(numEdges);
+
             callback = setInterval(function(){
                 if(counter < numEdges) {
                 
@@ -358,7 +353,38 @@ function getOptions(layoutName) {
 
 function nodeSelect(id) {
     console.log('I am the id ' + id);
-    window.open('jsmol.php','popUpWindow','height=700,width=600,left=50,top=50,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes');
+    var pdbId;
+    var pdbArray;
+
+    $.ajax({
+        type: 'POST',
+        url: 'protein-structure.php',
+        dataType: 'json',
+        data: {         
+            'id': id,
+            'action': "proteininfo"
+        },
+        success: function (data) {
+             //console.log(data);
+            for (var i = 0; i < data['proteininfo'].length; i++) {
+
+                var pdbList = data['proteininfo'][i].PDB;
+
+                pdbArray = pdbList.split(';');
+
+                //console.log(data['proteininfo'][i].PDB);
+            }
+            
+            pdbId = pdbArray[0].substring(0, pdbArray[0].length - 2);
+            console.log('The pdb is ' + pdbId);
+            window.open('jsmol.php?pid=' + pdbId,'popUpWindow','height=700,width=600,left=50,top=50,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes');
+
+        },
+        error: function (data) {
+            console.log(data);
+        }
+    });
+    
 }
 
 function setPDB(data) {
