@@ -21,13 +21,13 @@
     <script src="<?php echo $baseurl; ?>static/js/bootstrap.min.js"></script>
 	<script src="<?php echo $baseurl; ?>static/js/jquery.qtip.js"></script>
     <script src="<?php echo $baseurl; ?>static/js/cytoscape.js-2.4.8/cola.v3.min.js"></script>
-    <script src="<?php echo $baseurl; ?>static/js/cytoscape.js-2.4.8/cytoscape.min.js"></script>
+    <script src="/static/js/cytoscape.js-2.4.8/cytoscape.min.js"></script>
 	<script src="<?php echo $baseurl; ?>static/js/cytoscape-qtip.js"></script>
 <!--	
     <script src="<?php echo $baseurl; ?>static/js/jspdf.debug.js"></script>
     <script src="<?php echo $baseurl; ?>static/js/html2canvas.js"></script>
 -->
 		
-	<script src="<?php echo $baseurl; ?>static/js/jsmol/JSmol.min.nojq.js"></script>
+	<script src="/static/js/jsmol/JSmol.min.nojq.js"></script>
     <script src="<?php echo $baseurl; ?>static/js/nav.js"></script>	
 
