@@ -16,7 +16,7 @@
   <!--<script src="<?php echo $baseurl; ?>static/js/vendor/jquery.easing.1.3.js"></script> -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/2.4.8/cytoscape.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/2.4.8/cytoscape.min.js"></script>
-	<script src="/proteinwebapp/static/js/core.js"></script>
+	<script src="/static/js/core.js"></script>
   		
     <script src="<?php echo $baseurl; ?>static/js/bootstrap.min.js"></script>
 	<script src="<?php echo $baseurl; ?>static/js/jquery.qtip.js"></script>
