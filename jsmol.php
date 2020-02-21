@@ -1,13 +1,5 @@
 <?php include "blocks/head.inc.php"; ?>
 
-<?php 
-	$param =  $_GET['pid'];
-	echo '<script language="javascript">';
-	//echo 'alert("'.$param.'")';
-	echo 'var pdbidentifier = ' .$param;
-	echo '</script>';
-	?>
-
 <div class="container">
 		<div class="row">
         <div class="col-md-6">
@@ -113,7 +105,7 @@
 			use: "HTML5",   // JAVA HTML5 WEBGL are all options
 			j2sPath: "static/js/jsmol/j2s", // this needs to point to where the j2s directory is.
 			script: "set antialiasDisplay;",
-			serverURL: "http://chemapps.stolaf.edu/jmol/jsmol/php/jsmol.php",
+			serverURL: "https://chemapps.stolaf.edu/jmol/jsmol/php/jsmol.php",
 			readyFunction: jmol_isReady,
 			disableJ2SLoadMonitor: true,
 			disableInitialConsole: true,
