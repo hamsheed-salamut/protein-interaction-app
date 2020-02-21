@@ -12,6 +12,7 @@
 					<option value="6">Trace</option>
 				</select>
 			</div>
+	<br/> <br/>
 			<div class="col-md-6">
 				<div id="jsmol_panel">
 				</div>
