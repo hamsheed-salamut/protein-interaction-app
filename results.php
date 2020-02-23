@@ -5,21 +5,54 @@
 <style>
     #cy {
       height: 70%;
-      width: 60%;
+      width: auto;
       position: absolute;
       left: 0;
       top: 10;
       right: 0;
-      margin-left: auto; 
-      margin-right: auto; 
+      margin-left: 10%; 
+      margin-right: 20%; 
     }
+    
+  .info-protein {
+  text-align: justify;
+	}
+
+	. info-protein:after {
+	  content: "";
+	  display: inline-block;
+	  width: 100%;
+	}
+	.uniprot-panel {
+		float: right;
+		margin-right: 15%;
+		text-align: justify;
+		display: inline-block;
+		width: 15%;
+	}
 </style>
-
-
- <div id="cy"></div>
-  
+	<div class="container-wrapper">
+	
+			<div id="cy">
+			</div>
+				<div class="uniprot-panel">
 				
+                       <div class="btn btn-danger" role="alert">
+					  	Protein Information Summary
+						</div>
+						   <div class="alert alert-dark" role="alert">
+   						   <div class="protein-code">
+						  
+						   </div>
+						   <div class="protein-name">
 
+						   </div>
+						   <div class="protein-function">
+						   	   
+					   	   </div>	   
+						</div>
+        		</div>
+	</div>
 
 
 <?php include "blocks/footer.inc.php"; ?>

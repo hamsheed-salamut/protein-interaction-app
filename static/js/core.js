@@ -33,7 +33,7 @@ function cytoscapeHelper(options, data) {
 
         let var_nodes = [{data: {id: '0000',
                         name: 'No protein interaction network',
-                        bcolor: 'red'}}];
+                        bcolor: '#c82333'}}];
 
         cytoscapeGraph(options, var_nodes, []);
     } else {
@@ -44,7 +44,7 @@ function cytoscapeHelper(options, data) {
 
         let var_nodes = [{data: {id: data.main[0].ID,
                         name: data.main[0].Symbol,
-                        bcolor: 'red'}}];
+                        bcolor: '#c82333'}}];
         
         for (var x = 0; x < data['interactors'].length; x++) {
             let temp = data['interactors'][x];
@@ -95,7 +95,7 @@ function cytoscapeHelper(options, data) {
 
                 },
                 error: function (data) {
-                    console.log(data);
+
                 }
             
         });
@@ -209,7 +209,7 @@ function cytoscapeGraph(options, var_nodes, var_edges, settings) {
                         for(var x = 0 ;x < array.length; x++){
                             temp.push({group:"edges", data:array[x]['data'] });
                         }
-                         console.log(temp);
+
                         cy.add(temp);
                     } else {
                         var array = var_edges.slice(counter, numEdges),
@@ -218,7 +218,7 @@ function cytoscapeGraph(options, var_nodes, var_edges, settings) {
                             temp.push({group:"edges", data:array[x]['data'] });
                         }
                         cy.add(temp);
-                        console.log(temp);
+
                     }
                     counter += 10;
                 } else {
@@ -355,7 +355,9 @@ function nodeSelect(id) {
     console.log('I am the id ' + id);
     var pdbId;
     var pdbArray;
-
+    var proteinName;
+    var proteinFunction;
+    var proteinAccessCode;
     $.ajax({
         type: 'POST',
         url: 'protein-structure.php',
@@ -365,18 +367,23 @@ function nodeSelect(id) {
             'action': "proteininfo"
         },
         success: function (data) {
-             //console.log(data);
+
             for (var i = 0; i < data['proteininfo'].length; i++) {
 
                 var pdbList = data['proteininfo'][i].PDB;
 
                 pdbArray = pdbList.split(';');
-
-                //console.log(data['proteininfo'][i].PDB);
+                proteinName = data['proteininfo'][i].name;
+                proteinFunction = data['proteininfo'][i].function;
+                proteinAccessCode = data['proteininfo'][i].uniprot_AC;
             }
             
+            $('.protein-code').html('<b> Protein Access Code: </b>' + proteinAccessCode);
+            $('.protein-name').html('<b> Protein Name: </b>' + proteinName);
+            $('.protein-function').html('<b> Protein Function: </b>' + proteinFunction);
+
             pdbId = pdbArray[0].substring(0, pdbArray[0].length - 2);
-            console.log('The pdb is ' + pdbId);
+
             window.open('jsmol.php?pid=' + pdbId,'popUpWindow','height=700,width=600,left=50,top=50,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes');
 
         },
