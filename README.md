@@ -33,7 +33,13 @@ The application code is arranged according to the directory structure illustrate
 
 ## Demo
 
-Following is a snapshot of the result obtained when querying a protein of interest by entering its corresponding gene ID in the search field
+Following is a snapshot of the result obtained when querying a protein of interest by entering its corresponding gene ID in the search field.
+
+The results contain the following information:
+
+- [x] Protein-Protein Interaction (PPI) Network.
+- [x] Protein of interest related information. 
+- [x] 3D structural visualization of the protein of interest for queried gene.
 
 ![ppi_1](https://user-images.githubusercontent.com/23207774/85223055-ee409200-b3d0-11ea-9aee-d26e33a6ecba.png)
 
