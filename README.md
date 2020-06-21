@@ -1,7 +1,5 @@
 # Integration 3D strutural information with Protein-Protein Interaction (PPI) Network
 
----
-
 ## Context
 Proteins are large organic molecules that conduct a diverse range of functions in cells. A protein usually interacts with another protein, forming a large network of protein-protein interaction to
 perform its function properly. Hence, to understand the molecular basis of biological processes, it is important to study which proteins interact.
