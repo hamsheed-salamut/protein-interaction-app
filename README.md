@@ -1,4 +1,8 @@
-# Integration 3D strutural information with Protein-Protein Interaction (PPI) Network
+# Integration of 3D strutural information with Protein-Protein Interaction (PPI) Network
+
+This application supports Heroku.
+
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
 ## Context
 Proteins are large organic molecules that conduct a diverse range of functions in cells. A protein usually interacts with another protein, forming a large network of protein-protein interaction to
@@ -6,7 +10,7 @@ perform its function properly. Hence, to understand the molecular basis of biolo
 
 ## Problem Summary
 As of writing there are no web application that provides visualization of protein interaction network with known 3D structures and functional information about proteins.
-Thus, in this web app wee seek to provide an efficient way of integrating all protein-protein interaction data with 3D structure data and other functional information.
+Thus, in this web app we seek to provide an efficient way of integrating all protein-protein interaction data with 3D structure data and other functional information.
 
 ## Tooling
 
@@ -18,12 +22,16 @@ The application has been developed using the following tools.
 
 ## Tech 
 
-This applications uses a number of technologies to run properly.
+This application uses a number of technologies to run properly.
 
 - [PHP](https://www.php.net/)
 - [jQuery](https://jquery.com/)
 - [Cystocape.js](https://js.cytoscape.org/)
 - [JSmol](https://sourceforge.net/projects/jsmol/)
+
+## Data Sources
+
+This application relies on a number of data sources to run. Sample of raw data from public repositories such as [BioGrid](https://thebiogrid.org/), [Uniprot](https://www.uniprot.org/) and [RCSB](https://www.rcsb.org/) has been parsed and imported into a centralized MySQL database. 
 
 ## Project Structure
 
